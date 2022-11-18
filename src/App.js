@@ -2,29 +2,21 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Pet from "./Pet";
 
-
 const App = () => {
-    return React.createElement(
-        "div",
-        { id: "header" },
-        [React.createElement("h1", { id: "brand" }, "Adopt Me!"),  // everytime app us called it creates div of id "header" and inside of it h1 of id "brand" saying "Adopt me"
-        React.createElement(Pet, {
-            name: "Gary",
-            animal: "Cat",
-            breed: "Orange"
-        }),
-        React.createElement(Pet, {
-            name: "Penelope",
-            animal: "Cat",
-            breed: "Grey"
-        }),
-        React.createElement(Pet, {
-            name: "Biscuit",
-            animal: "Dog",
-            breed: "Husky"
- })]
-    );
-
+  return React.createElement("div", {}, [ // creates div
+    React.createElement("h1", { id: "title"}, "Adopt Me!"), // inside of it h1 of id "title"
+    React.createElement(Pet, {  // and pet via Pet.js fn
+      name: "Luna",
+      animal: "Dog",
+      breed: "Havanese",
+    }),
+    React.createElement(Pet, {
+      name: "Pepper",
+      animal: "Bird",
+      breed: "Cockatiel",
+    }),
+    React.createElement(Pet, { name: "Doink", animal: "Cat", breed: "Mix" }),
+  ]);
 };
 
-ReactDOM.render(React.createElement(App), document.getElementById("root")); // tells DOM where to put it
+ReactDOM.render(React.createElement(App), document.getElementById("root"));
